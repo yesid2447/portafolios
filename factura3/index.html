@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Factura</title>
+
+<style>
+
+body{
+    background:#e5e5e5;
+    font-family:Arial;
+    margin:0;
+}
+
+.factura{
+    width:900px;
+    margin:20px auto;
+    background:white;
+    box-shadow:0 0 10px #aaa;
+    overflow:hidden;
+}
+
+/* HEADER */
+.header{
+    background:black;
+    color:white;
+    height:110px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    
+}
+
+.logo-bloque{
+    background:#000000;
+    height:100%;
+    display:flex;
+    align-items:center;
+    padding:0 100px;
+    flex-shrink:0;
+    
+    
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo h2{
+    margin:0;
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.logo small{
+    display:block;
+    font-size:10px;
+    color:#9c9b9b;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.img-logo{
+    width:45px;
+}
+
+
+
+.titulo-bloque{
+    background:#000000;
+    height:100%;
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    padding:0 30px;
+    
+    
+      
+}
+
+.titulo{
+    text-align:right;
+}
+
+.titulo h1{
+    margin:0 0 5px 0;
+    color:#f28c28;
+    font-size:38px;
+    line-height:1;
+}
+
+.titulo p{
+    margin:2px 0;
+    font-size:12px;
+    color:#ddd;
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+}
+
+.titulo p span:first-child{
+    color:#ffffff;
+}
+
+/* INFO */
+.info{
+    padding:30px;
+    overflow:hidden;
+}
+
+.cliente{
+    float:left;
+    width:50%;
+}
+
+.cliente h3{
+    color:#f28c28;
+    margin-bottom:10px;
+}
+
+.pago{
+    float:right;
+    width:40%;
+}
+
+.pago h3{
+    color:#f28c28;
+}
+
+/* TABLA */
+.tabla{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabla th{
+    background:#f28c28;
+    color:white;
+    padding:12px;
+    text-align:left;
+}
+
+.tabla td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+}
+
+.tabla tr:nth-child(even){
+    background:#f9f9f9;
+}
+
+/* RESUMEN */
+.resumen{
+    padding:20px 30px;
+}
+
+.resumen-fila{
+    display:flex;
+    justify-content:flex-end;
+    margin:5px 0;
+    font-size:14px;
+}
+
+.resumen-fila .etiqueta{
+    width:750px;
+    text-align:left;
+    color:#000;
+}
+
+.resumen-fila .valor{
+    width:120px;
+    text-align:right;
+    color:#000;
+}
+
+/* TOTAL */
+.total{
+    background:#f28c28;
+    color:white;
+    padding:15px 30px;
+    font-size:18px;
+    display:flex;
+    justify-content:space-between;
+}
+
+/* FOOTER */
+.footer{
+    padding:30px;
+    overflow:hidden;
+}
+
+.terminos{
+    float:left;
+    width:60%;
+}
+
+.firma{
+    float:right;
+    text-align:center;
+    margin-top:80px;
+}
+
+/* LINEAS FINALES */
+.lineas-final{
+    width:100%;
+    height:50px;
+    overflow:hidden;
+    display:flex;
+}
+
+.naranja{
+    width:20%;
+    height:100%;
+    background:#f28c28;
+    transform:skewX(-35deg);
+}
+
+.negro{
+    width:75%;
+    height:100%;
+    background:#000;
+    margin-left:auto;
+    transform:skewX(-35deg);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="factura">
+
+    <!-- HEADER -->
+    <div class="header">
+
+        <div class="logo-bloque">
+            <div class="logo">
+                <img src="/portafolio/imagenes/z.jpg" class="img-logo">
+                <div>
+                    <h2>COMPANY</h2>
+                    <small>Company Tagline Here</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="titulo-bloque">
+            <div class="titulo">
+                <h1>INVOICE</h1>
+                <p><span><strong>Number:</strong></span><span>#123456</span></p>
+                <p><span><strong>Account No:</strong></span><span>1234 5678 910</span></p>
+                <p><span><strong>Invoice Date:</strong></span><span>April 05, 2020</span></p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- INFO -->
+    <div class="info">
+        <div class="cliente">
+            <h3>INVOICE TO:</h3>
+            <p><b>Jhone Doe.</b></p>
+            <p>Managing Director, Company ltd.</p>
+            <p>Phone: +123 4567 8910</p>
+            <p>Email: example@gmail.com</p>
+        </div>
+
+        <div class="pago">
+            <h3>Payment Method</h3>
+            <p>Account No: 1234 5678 910</p>
+            <p>Account Name: Jhone Doe</p>
+            <p>Branch Name: XYZ</p>
+        </div>
+    </div>
+
+    <!-- TABLA -->
+    <table class="tabla">
+        <tr>
+            <th>DATE</th>
+            <th>ITEM DESCRIPTION</th>
+            <th>PRICE</th>
+            <th>QTY</th>
+            <th>TOTAL</th>
+        </tr>
+        <tr>
+            <td>Jan 10, 2020</td>
+            <td>Businesscard Design</td>
+            <td>$300</td>
+            <td>2</td>
+            <td>$600.00</td>
+        </tr>
+        <tr>
+            <td>Jan 10, 2020</td>
+            <td>Fruit Flyer Design</td>
+            <td>$455</td>
+            <td>1</td>
+            <td>$450.00</td>
+        </tr>
+        <tr>
+            <td>Jan 10, 2020</td>
+            <td>Application Interface Design</td>
+            <td>$300</td>
+            <td>1</td>
+            <td>$300.00</td>
+        </tr>
+        <tr>
+            <td>Jan 9, 2020</td>
+            <td>Theme Development</td>
+            <td>$150</td>
+            <td>3</td>
+            <td>$450.00</td>
+        </tr>
+        <tr>
+            <td>Jan 9, 2020</td>
+            <td>Full Branding Design</td>
+            <td>$150</td>
+            <td>1</td>
+            <td>$150.00</td>
+        </tr>
+        <tr>
+            <td>Jan 8, 2020</td>
+            <td>Creative Logo Design</td>
+            <td>$200</td>
+            <td>1</td>
+            <td>$200.00</td>
+        </tr>
+    </table>
+
+    <!-- RESUMEN -->
+    <div class="resumen">
+
+        <div class="resumen-fila">
+            <span class="etiqueta">Subtotal:</span>
+            <span class="valor">$3150.00</span>
+        </div>
+
+        <div class="resumen-fila">
+            <span class="etiqueta">Discount:</span>
+            <span class="valor">$0.00</span>
+        </div>
+
+        <div class="resumen-fila">
+            <span class="etiqueta">Tax (10%):</span>
+            <span class="valor">$315.00</span>
+        </div>
+
+    </div>
+
+    <!-- TOTAL -->
+    <div class="total">
+        <span>Total:</span>
+        <span>$3465.00</span>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="terminos">
+            <h4>Terms & Conditions:</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+        </div>
+        <div class="firma">
+            <p>________________________</p>
+            <p><b>Your Name & Signature</b></p>
+            <p>Account Manager</p>
+        </div>
+    </div>
+
+    <!-- FINAL -->
+    <div class="lineas-final">
+        <div class="naranja"></div>
+        <div class="negro"></div>
+    </div>
+
+</div>
+
+</body>
+</html>
