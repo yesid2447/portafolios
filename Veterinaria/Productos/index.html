@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tienda — Patitas Felices</title>
+</head>
+<body>
+
+    <!-- ========================================
+         ENCABEZADO
+         Logo + nombre de la veterinaria + nav + botón cita
+    ======================================== -->
+    <header class="encabezado">
+        <div class="encabezado__contenido">
+
+            <!-- Logo y nombre -->
+            <div class="encabezado__marca">
+                <img src="../imagenes/log_veterinaria.png" alt="Logo Patitas Felices" class="encabezado__logo">
+                <div class="encabezado__nombre">
+                    <span>Patitas</span>
+                    <strong>Felices</strong>
+                </div>
+            </div>
+
+            <!-- Menú de navegación -->
+            <nav class="encabezado__nav">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html#nosotros">Nosotros</a></li>
+                    <li><a href="../index.html#servicios">Servicios</a></li>
+                    <li><a href="#" class="activo">Productos</a></li>
+                    <li><a href="../index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botón de llamado a la acción -->
+            <a href="../index.html#cita" class="encabezado__boton">Agenda tu cita</a>
+
+        </div>
+    </header>
+
+
+    <!-- ========================================
+         PORTADA DE LA TIENDA
+         Título y frase con fondo degradado azul
+    ======================================== -->
+    <section class="tienda__portada">
+        <h1>Nuestra Tienda</h1>
+        <p>Tu mascota hace parte de nosotros</p>
+    </section>
+
+
+    <!-- ========================================
+         BARRA DE FILTROS
+         Botones para filtrar los productos por categoría.
+         Cada botón apunta a un ancla (#cat-xxx) que está
+         dentro del grid. El CSS usa :target para mostrar
+         solo los productos de esa categoría.
+    ======================================== -->
+    <section class="filtros__barra">
+        <div class="filtros__contenido">
+
+            <span class="filtros__titulo">Categorías:</span>
+
+            <div class="filtros__categorias">
+                <a href="#cat-todos"        class="filtro__boton">Todos</a>
+                <a href="#cat-alimentacion" class="filtro__boton">Alimentación</a>
+                <a href="#cat-higiene"      class="filtro__boton">Higiene</a>
+                <a href="#cat-salud"        class="filtro__boton">Salud</a>
+                <a href="#cat-accesorios"   class="filtro__boton">Accesorios</a>
+                <a href="#cat-juguetes"     class="filtro__boton">Juguetes</a>
+            </div>
+
+            <!-- Contador dinámico: el CSS actualiza este texto según el filtro activo -->
+            <span class="filtros__contador"></span>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         SECCIÓN DE PRODUCTOS
+         Anclas invisibles para el sistema de filtros CSS.
+         Están ANTES del grid para que el selector ~ funcione.
+    ======================================== -->
+    <section class="tienda__seccion">
+
+        <!-- Anclas de filtro (no se ven, solo son puntos de referencia) -->
+        <div id="cat-todos"></div>
+        <div id="cat-alimentacion"></div>
+        <div id="cat-higiene"></div>
+        <div id="cat-salud"></div>
+        <div id="cat-accesorios"></div>
+        <div id="cat-juguetes"></div>
+
+        <!-- Cuadrícula de tarjetas de productos -->
+        <div class="productos__cuadricula">
+
+
+            <!-- ===== ALIMENTACIÓN (3 productos) ===== -->
+
+            <div class="producto__tarjeta tarjeta--alimentacion">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=400&q=80"
+                         alt="Concentrado para perros" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--alimentacion">Alimentación</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Perros</span>
+                    <h2 class="producto__nombre">CONCENTRADO PARA PERROS</h2>
+                    <p class="producto__descripcion">Alimentos balanceados y nutritivos para perros de todas las edades y tamaños.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+            <div class="producto__tarjeta tarjeta--alimentacion">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1571566882372-1598d88abd90?w=400&q=80"
+                         alt="Concentrado para gatos" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--alimentacion">Alimentación</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Gatos</span>
+                    <h2 class="producto__nombre">CONCENTRADO PARA GATOS</h2>
+                    <p class="producto__descripcion">Nutrición especializada para mantener a tu gato saludable, activo y fuerte.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+            <div class="producto__tarjeta tarjeta--alimentacion">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=400&q=80"
+                         alt="Snacks y premios" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--alimentacion">Alimentación</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Perros · Gatos</span>
+                    <h2 class="producto__nombre">SNACKS Y PREMIOS</h2>
+                    <p class="producto__descripcion">Deliciosos premios ideales para entrenamiento, cuidado dental y consentimiento.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+
+            <!-- ===== HIGIENE (3 productos) ===== -->
+
+            <div class="producto__tarjeta tarjeta--higiene">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1584552532191-ab7a5b86a40f?w=400&q=80"
+                         alt="Shampoo veterinario" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--higiene">Higiene</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Higiene</span>
+                    <h2 class="producto__nombre">SHAMPOO VETERINARIO</h2>
+                    <p class="producto__descripcion">Productos que cuidan la piel y el pelaje de tu mascota con fórmula especializada.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+            <div class="producto__tarjeta tarjeta--higiene">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=400&q=80"
+                         alt="Cuidado dental" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--higiene">Higiene</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Higiene</span>
+                    <h2 class="producto__nombre">CUIDADO DENTAL Y CEPILLOS</h2>
+                    <p class="producto__descripcion">Productos para mantener una correcta higiene bucal y del pelaje de tu mascota.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+            <div class="producto__tarjeta tarjeta--higiene">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1581888227599-779811939961?w=400&q=80"
+                         alt="Higiene y limpieza" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--higiene">Higiene</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Higiene</span>
+                    <h2 class="producto__nombre">HIGIENE Y LIMPIEZA</h2>
+                    <p class="producto__descripcion">Productos especializados para mantener limpios los espacios de tu mascota.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+
+            <!-- ===== SALUD (3 productos) ===== -->
+
+            <div class="producto__tarjeta tarjeta--salud">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1550583723-9f9c28966e1c?w=400&q=80"
+                         alt="Medicamentos veterinarios" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--salud">Salud</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Salud</span>
+                    <h2 class="producto__nombre">MEDICAMENTOS</h2>
+                    <p class="producto__descripcion">Medicamentos veterinarios confiables para diferentes tratamientos y cuidados.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+            <div class="producto__tarjeta tarjeta--salud">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1612276529731-4b21494e6d9e?w=400&q=80"
+                         alt="Suplementos para mascotas" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--salud">Salud</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Salud</span>
+                    <h2 class="producto__nombre">SUPLEMENTOS</h2>
+                    <p class="producto__descripcion">Vitaminas y suplementos que fortalecen las defensas y el bienestar general.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+            <div class="producto__tarjeta tarjeta--salud">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=400&q=80"
+                         alt="Antipulgas y desparasitación" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--salud">Salud</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Salud</span>
+                    <h2 class="producto__nombre">ANTIPULGAS Y DESPARASITACIÓN</h2>
+                    <p class="producto__descripcion">Soluciones efectivas para proteger a tu mascota contra pulgas y parásitos.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+
+            <!-- ===== ACCESORIOS (4 productos) ===== -->
+
+            <div class="producto__tarjeta tarjeta--accesorios">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80"
+                         alt="Correas y arneses" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--accesorios">Accesorios</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Accesorios</span>
+                    <h2 class="producto__nombre">CORREAS Y ARNESES</h2>
+                    <p class="producto__descripcion">Accesorios cómodos y seguros para paseos diarios y entrenamiento.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+            <div class="producto__tarjeta tarjeta--accesorios">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&q=80"
+                         alt="Camas para mascotas" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--accesorios">Accesorios</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Accesorios</span>
+                    <h2 class="producto__nombre">CAMAS PARA MASCOTAS</h2>
+                    <p class="producto__descripcion">Espacios suaves y confortables para el descanso y relajación de tu compañero.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+            <div class="producto__tarjeta tarjeta--accesorios">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1607923432780-7a9c30adcb73?w=400&q=80"
+                         alt="Comederos y bebederos" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--accesorios">Accesorios</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Accesorios</span>
+                    <h2 class="producto__nombre">COMEDEROS Y BEBEDEROS</h2>
+                    <p class="producto__descripcion">Recipientes prácticos y resistentes para mantener una buena alimentación.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+            <div class="producto__tarjeta tarjeta--accesorios">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80"
+                         alt="Collares y accesorios" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--accesorios">Accesorios</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Accesorios</span>
+                    <h2 class="producto__nombre">COLLARES Y ACCESORIOS</h2>
+                    <p class="producto__descripcion">Collares, placas y accesorios modernos para el estilo y comodidad de tu mascota.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+
+            <!-- ===== JUGUETES (3 productos) ===== -->
+
+            <div class="producto__tarjeta tarjeta--juguetes">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?w=400&q=80"
+                         alt="Juguetes interactivos" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--juguetes">Juguetes</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Juguetes</span>
+                    <h2 class="producto__nombre">JUGUETES INTERACTIVOS</h2>
+                    <p class="producto__descripcion">Juguetes para estimular la actividad física y mental de tu mascota.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+            <div class="producto__tarjeta tarjeta--juguetes">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1453227588063-bb302b62f50b?w=400&q=80"
+                         alt="Pelotas y cuerdas" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--juguetes">Juguetes</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Juguetes</span>
+                    <h2 class="producto__nombre">PELOTAS Y CUERDAS</h2>
+                    <p class="producto__descripcion">Pelotas resistentes y cuerdas de jale para horas de diversión y ejercicio.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+            <div class="producto__tarjeta tarjeta--juguetes">
+                <div class="producto__imagen__marco">
+                    <img src="https://images.unsplash.com/photo-1566888596782-c7f41cc184c5?w=400&q=80"
+                         alt="Juguetes para gatos" class="producto__imagen">
+                    <span class="producto__etiqueta etiqueta--juguetes">Juguetes</span>
+                </div>
+                <div class="producto__info">
+                    <span class="producto__categoria">Gatos</span>
+                    <h2 class="producto__nombre">JUGUETES PARA GATOS</h2>
+                    <p class="producto__descripcion">Varas, ratones y túneles que despiertan el instinto cazador de tu gato.</p>
+                    <a href="../index.html#cita" class="producto__boton">Consultar precio</a>
+                </div>
+            </div>
+
+
+        </div><!-- fin productos__cuadricula -->
+    </section>
+
+
+    <!-- ========================================
+         AVISO DE CONTACTO
+         Sección final para cuando no encuentran un producto
+    ======================================== -->
+    <section class="contacto__aviso">
+        <h2>¿No encuentras lo que buscas?</h2>
+        <p>Contáctanos y te ayudamos a conseguir el producto ideal para tu mascota.</p>
+        <div class="contacto__botones">
+            <a href="tel:3204567890" class="boton__telefono">📞 320 456 7890</a>
+            <a href="../index.html#cita" class="boton__cita">Agenda una cita</a>
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         PIE DE PÁGINA
+         4 columnas: marca, categorías, links, contacto
+    ======================================== -->
+    <footer class="pie__pagina">
+        <div class="pie__contenido">
+
+            <div class="pie__columna">
+                <h3>Patitas Felices</h3>
+                <p>Cuidamos a tus mascotas con amor y profesionalismo en San Gil, Santander.</p>
+                <div class="pie__redes">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">TikTok</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="pie__columna">
+                <h3>Categorías</h3>
+                <ul>
+                    <li><a href="#cat-alimentacion">Alimentación</a></li>
+                    <li><a href="#cat-higiene">Higiene</a></li>
+                    <li><a href="#cat-salud">Salud</a></li>
+                    <li><a href="#cat-accesorios">Accesorios</a></li>
+                    <li><a href="#cat-juguetes">Juguetes</a></li>
+                </ul>
+            </div>
+
+            <div class="pie__columna">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html#servicios">Servicios</a></li>
+                    <li><a href="../index.html#cita">Agendar cita</a></li>
+                    <li><a href="../index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="pie__columna">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>📞 320 456 7890</li>
+                    <li>📍 San Gil, Santander</li>
+                    <li>🕐 Lun–Sab: 8am–6pm</li>
+                    <li>🚑 Urgencias: 24/7</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="pie__derechos">
+            <p>© 2026 Patitas Felices — Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+</body>
+</html>
