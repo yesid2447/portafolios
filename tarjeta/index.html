@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.18.1/axios.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="card">
+            <div class="perfil-header">
+                <img id="perfil" alt="Foto de perfil">
+                <div class="perfil-info">
+                    <h1 id="nombre"></h1>
+                    <h2 id="telefono"></h2>
+                </div>
+            </div>
+
+            <section class="info-section">
+                <h3>Datos personales</h3>
+                <div class="datos-grid">
+                    <div class="dato-item"><strong>Género:</strong> <span id="genero"></span></div>
+                    <div class="dato-item"><strong>Edad:</strong> <span id="edad"></span></div>
+                    <div class="dato-item"><strong>Nacimiento:</strong> <span id="nacimiento"></span></div>
+                    <div class="dato-item"><strong>Nacionalidad:</strong> <span id="nacionalidad"></span></div>
+                    <div class="dato-item"><strong>Documento:</strong> <span id="documento"></span></div>
+
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h3>Contacto</h3>
+                <div class="datos-grid">
+                    <div class="dato-item"><strong>Correo:</strong> <span id="correo"></span></div>
+                    <div class="dato-item"><strong>Celular:</strong> <span id="celular"></span></div>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h3>Ubicación</h3>
+                <div class="datos-grid">
+                    <div class="dato-item"><strong>País:</strong> <span id="pais"></span></div>
+                                        <div class="dato-item"><strong>Estado:</strong> <span id="estado"></span></div>
+
+                    <div class="dato-item"><strong>Ciudad:</strong> <span id="ciudad"></span></div>
+                    <div class="dato-item"><strong>Dirección:</strong> <span id="direccion"></span></div>
+                    <div class="dato-item"><strong>Código postal:</strong> <span id="codigo_postal"></span></div>
+                    <div class="dato-item"><strong>Longitud:</strong> <span id="longitud"></span></div>
+                    <div class="dato-item"><strong>Latitud:</strong> <span id="latitud"></span></div>
+                </div>
+            </section>
+
+            <div class="map-section">
+                <p><strong>Zona horaria:</strong> <span id="zona_horaria"></span></p>
+                <a id="map-link" href="#" target="_blank" rel="noopener noreferrer">Ver en Google Maps</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async()=>{
+            let res = await axios.get("https://randomuser.me/api/")
+            console.log(res);
+            let nombre = document.getElementById("nombre")
+            nombre.textContent = res.data.results[0].name.first
+            let perfil = document.getElementById("perfil")
+            perfil.src = res.data.results[0].picture.large
+            let telefono= document.getElementById("telefono")
+            telefono.textContent = res.data.results[0].phone
+            let correo = document.getElementById("correo")
+            correo.textContent = res.data.results[0].email
+            let pais = document.getElementById("pais")
+            pais.textContent = res.data.results[0].location.country
+            let ciudad = document.getElementById("ciudad")
+            ciudad.textContent = res.data.results[0].location.city
+            let genero = document.getElementById("genero")
+            genero.textContent = res.data.results[0].gender
+            let edad = document.getElementById("edad")
+            edad.textContent = res.data.results[0].dob.age
+            let nacimiento = document.getElementById("nacimiento")
+            let fechaCompleta = res.data.results[0].dob.date
+            nacimiento.textContent = fechaCompleta.split("T")[0]
+            let nacionalidad = document.getElementById("nacionalidad")
+            nacionalidad.textContent = res.data.results[0].nat
+            let documento = document.getElementById("documento")
+            documento.textContent = res.data.results[0].id.value
+            let direccion = document.getElementById("direccion")
+            direccion.textContent = res.data.results[0].location.street.name + " " + res.data.results[0].location.street.number
+            let celular = document.getElementById("celular")
+            celular.textContent = res.data.results[0].cell
+            let codigo_postal = document.getElementById("codigo_postal")
+            codigo_postal.textContent = res.data.results[0].location.postcode
+            let estado = document.getElementById("estado")
+            estado.textContent = res.data.results[0].location.state
+            let longitud = document.getElementById("longitud")
+            let latitud = document.getElementById("latitud")
+            let longitudValue = res.data.results[0].location.coordinates.longitude
+            let latitudValue = res.data.results[0].location.coordinates.latitude
+            longitud.textContent = longitudValue
+            latitud.textContent = latitudValue
+            let mapLink = document.getElementById("map-link")
+            mapLink.href = `https://www.google.com/maps?q=${latitudValue},${longitudValue}`
+            let zona_horaria = document.getElementById("zona_horaria")
+            zona_horaria.textContent = res.data.results[0].location.timezone.description
+
+            
+
+        
+
+        })
+      
+    </script>
+   
+</body>
+</html>

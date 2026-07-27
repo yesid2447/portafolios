@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background: #000000;
+}
+
+.contenedor {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px;
+  background: rgb(42, 201, 90);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+}
+
+.perfil-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+#perfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  order: 2;
+  margin-left: 20px;
+}
+
+.perfil-info {
+  flex: 1;
+  order: 1;
+  text-align: center;
+  max-width: 300px;
+}
+
+.info-section {
+  width: 100%;
+  background: rgba(216, 203, 203, 0.481);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.datos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.dato-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgb(238, 238, 244);
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.map-section {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#map-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 14px;
+  background: #0b5fff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+  .datos-grid {
+    grid-template-columns: 1fr;
+  }
+}
